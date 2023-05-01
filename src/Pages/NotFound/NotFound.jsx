@@ -2,7 +2,7 @@ import './NotFound.css'
 
 const NotFound = () => {
     return (
-        <p>NotFound</p>
+        <img src="https://hostiq.ua/wiki/wp-content/uploads/2021/05/03-error-404-not-found-1.png" alt="404" />
     )
 }
 
