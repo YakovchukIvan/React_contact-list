@@ -1,0 +1,54 @@
+.contacts-labels .title {
+  font-size: 16px;
+  line-height: 112px;
+  padding: 0 0 0 32px;
+  color: #333333;
+  overflow: hidden;
+}
+.contacts-labels .title span {
+  float: right;
+}
+
+.contacts-labels .list .head {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+  text-align: center;
+  background: #39bee8;
+  color: #ffffff;
+  margin: 60px 0 40px;
+}
+.contacts-labels .list .unit {
+  overflow: hidden;
+  padding: 0 0 20px;
+}
+.contacts-labels .list .unit .lab-success {
+  background: #46be8a;
+}
+.contacts-labels .list .unit .lab-primary {
+  background: #7266ba;
+}
+.contacts-labels .list .unit .lab-danger {
+  background: #ff69b4;
+}
+.contacts-labels .list .unit .lab-warning {
+  background: #f2a654;
+}
+.btn-primary {
+  background-color: #7266ba;
+}
+.contacts-labels .list .unit .lab {
+  font-size: 16px;
+  line-height: 32px;
+  float: left;
+  width: 112px;
+  padding: 0 0 0 18px;
+  color: #ffffff;
+}
+.contacts-labels .list .unit span {
+  display: block;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: bold;
+}
