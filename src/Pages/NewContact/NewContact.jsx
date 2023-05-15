@@ -11,10 +11,13 @@ import {v4 as uuidv4} from 'uuid'
 //router-dom
 import { useNavigate } from 'react-router-dom'
 
+// import hooks
+import { useDispatch } from 'react-redux'
+import { addContact } from '../../redux/action'
 
 
 
-const NewContact = ({onNewContact}) => {
+const NewContact = () => {
     const initialValues = {
       id: uuidv4(),
       name: '',
@@ -27,10 +30,11 @@ const NewContact = ({onNewContact}) => {
     }
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = (values) => {
       console.log(values);
-      onNewContact(values)
+      dispatch(addContact(values))
       navigate('/');
     };
 

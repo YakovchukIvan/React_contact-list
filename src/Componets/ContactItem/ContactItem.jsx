@@ -1,11 +1,18 @@
 import './ContactItem.css'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { deleteContact } from '../../redux/action'
+
 import { Link } from "react-router-dom"
 
-const ContactItem = ({ stor, onDeleteContact }) => {
+const ContactItem = () => {
+
+  const contacts = useSelector((state) => state.contacts)
+  const dispatch = useDispatch()
 
   const handleDeleteContact = (id) => {
-    onDeleteContact(id)
+    console.log(id);
+    dispatch(deleteContact(id))
   }
 
     return(
@@ -18,7 +25,7 @@ const ContactItem = ({ stor, onDeleteContact }) => {
             </div>
           </div>
           <hr className='m-0' />
-            {stor.map((contact) => (
+            {contacts && contacts.map((contact) => (
                 <div className='row p-4' key={contact.id}>
                   <div className='col-2'>
                     <img className='rounded-circle' src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt="avatar" />
