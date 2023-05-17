@@ -2,7 +2,25 @@ import './Header.css'
 
 import { Link } from 'react-router-dom'
 
+import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { searchContact } from '../../redux/action'
+
 const Header = () => {
+
+  const [searchTerm, setSearchTerm] = useState('')
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(searchContact(searchTerm.toLowerCase()))
+  },[dispatch, searchTerm])
+  
+  const handleChange = (e) => {
+    const value = e.target.value 
+    setSearchTerm(value)
+  }
+
+
     return(
         <nav className='container rounded shadow-lg'>
           <div className='row'>
@@ -16,7 +34,7 @@ const Header = () => {
             </div>
             <div className='col-4'></div>
             <div className='col-4'>
-              <input type='text'  className='form-control fs-6' placeholder='Search' />
+              <input type='text' value={searchTerm} onChange={handleChange} className='form-control fs-6' placeholder='Search' />
             </div>
           </div>
         </nav>

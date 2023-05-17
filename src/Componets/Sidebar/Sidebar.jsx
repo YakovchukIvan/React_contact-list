@@ -1,9 +1,8 @@
 import './Sidebar.css'
 
 import { useSelector } from 'react-redux'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { deleteContact } from '../../redux/action'
 
+ 
 const Sidebar = () => {
 
     const statusContact = {

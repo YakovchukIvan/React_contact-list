@@ -6,30 +6,43 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import {validationSchema} from '../../validation/Validation'
 
 // for id
-import {v4 as uuidv4} from 'uuid'
+// import {v4 as uuidv4} from 'uuid'
 
 //router-dom
 import { useNavigate } from 'react-router-dom'
 
+//
+import { useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { editContact } from '../../redux/action'
 
 
 
 
 const UpdateContact = () => {
+
+    const {id} = useParams()
+    const contact = useSelector((state) =>
+      state.contacts.find((contact) => contact.id === id)
+    )
+
+    const dispatch = useDispatch()
+
     const initialValues = {
-      id: uuidv4(),
-      name: '',
-      phone: '',
-      email: '',
-      avatar: '',
-      gender: '',
-      status: '',
-      favorite: ''
+      id: contact.id,
+      name: contact.name,
+      phone: contact.phone,
+      email: contact.email,
+      avatar: contact.avatar,
+      gender: contact.gender,
+      status: contact.status,
+      favorite: contact.favorite
     }
 
     const navigate = useNavigate();
+
     const handleSubmit = (values) => {
-      console.log(values);
+      dispatch(editContact(id, values))
       navigate('/');
     };
 
