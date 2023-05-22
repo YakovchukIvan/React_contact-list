@@ -1,7 +1,7 @@
 import './Sidebar.css'
 
 import { useSelector } from 'react-redux'
-
+import { Link } from "react-router-dom"
  
 const Sidebar = () => {
 
@@ -33,6 +33,7 @@ const Sidebar = () => {
                 <div className="unit">
                   <div className="lab lab-success">Work</div>
                   <span>{statusContact.Work}</span>
+                  <Link to='/Componets/Sidebar/work'><button>edit</button></Link>
                 </div>
                 <div className="unit">
                   <div className="lab lab-primary">Family</div>

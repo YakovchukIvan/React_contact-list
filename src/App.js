@@ -13,6 +13,8 @@ import NewContact from "./Pages/NewContact/NewContact"
 import UpdateContact from "./Pages/UpdateContact/UpdateContact"
 import NotFound from "./Pages/NotFound/NotFound"
 import Header from "./Componets/Header/Header" 
+import workContact from './Componets/Sidebar/work'
+
 
 //import hooks
 // import { useState } from 'react'
@@ -39,6 +41,7 @@ function App() {
           <Route path="/new-contact" element={<NewContact/>}/>
           <Route path="/update-contact/:id" element={<UpdateContact/>}/>
           <Route path="*" element={<NotFound/>}/>
+          <Route path="/Componets/Sidebar/work" element={<workContact/>}/>
         </Routes>
       </Router>
     </Provider>
